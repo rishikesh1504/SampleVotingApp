@@ -4,7 +4,7 @@ services:
 python:
   - "3.9-slim"
 before_script:
-      -  make docker
+      - make
 script:
   - docker build -t kyamajir123/vote ./vote
   - docker push kyamajir123/vote:latest
