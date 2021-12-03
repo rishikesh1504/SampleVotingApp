@@ -9,3 +9,7 @@ before_script:
 script:
   - docker build -t kyamajir123/vote ./vote
   - docker push kyamajir123/vote:latest
+  - docker build -t kyamajir123/result ./result 
+  - docker push kyamajir123/result:latest
+  - docker build -t kyamajir123/worker ./worker 
+  - docker push kyamajir123/worker:latest
