@@ -5,6 +5,7 @@ python:
   - "3.9-slim"
 before_script:
       - make
+      - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 script:
   - docker build -t kyamajir123/vote ./vote
   - docker push kyamajir123/vote:latest
