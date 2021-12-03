@@ -1,11 +1,9 @@
-# version is now using "compose spec"
-# v2 and v3 are now combined!
-# docker-compose v1.27+ required
+---
+version: '3'
 
 services:
   vote:
     image: kyamajir123/vote
-    # use python rather than gunicorn for local dev
     command: python app.py
     depends_on:
       redis:
@@ -20,7 +18,6 @@ services:
 
   result:
     image: kyamajir123/result
-    # use nodemon rather than node for local dev
     command: nodemon server.js
     depends_on:
       db:
