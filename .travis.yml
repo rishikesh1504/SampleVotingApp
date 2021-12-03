@@ -4,8 +4,7 @@ services:
 python:
   - "3.9-slim"
 before_script:
-      -  pip install docker
-      -  docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      -  make docker
 script:
   - docker build -t kyamajir123/vote ./vote
   - docker push kyamajir123/vote:latest
